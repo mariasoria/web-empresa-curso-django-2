@@ -28,3 +28,7 @@ def category(request, category_id):
     # el diccionario de contexto {'category':category} 
     # es lo que les estoy pasando al template category.html
     # Por eso, luego desde el template puedo acceder a lo que haya ahí dentro
+
+def post(request, post_id):
+    post = get_object_or_404(Post, id=post_id)
+    return render(request, "blog/post.html", {'post':post})

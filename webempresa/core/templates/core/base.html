@@ -26,7 +26,7 @@
 
   <body>
 
-    <h1 class="site-heading text-center text-white d-none d-lg-block">
+    <h1 class="site-heading text-center d-none d-lg-block">
       <span class="site-heading-upper text-primary mb-3">Tus cursos en Irlanda e Inglaterra</span>
       <span class="site-heading-lower"> h4 Idiomas y ocio </span>
     </h1>
@@ -44,7 +44,10 @@
               <a class="nav-link text-uppercase text-expanded" href="{% url 'home' %}">Inicio</a>
             </li>
             <li class="nav-item px-lg-4 {% if request.path == '/about/' %} active {% endif %}">
-              <a class="nav-link text-uppercase text-expanded" href="{% url 'about' %}">Historia</a>
+              <a class="nav-link text-uppercase text-expanded" href="{% url 'about' %}">Nosotros</a>
+            </li>
+            <li class="nav-item px-lg-4 {% if request.path == '/delegations/' %} active {% endif %}">
+              <a class="nav-link text-uppercase text-expanded" href="{% url 'delegations' %}">Delegaciones</a>
             </li>
             <li class="nav-item px-lg-4 {% if request.path == '/services/' %} active {% endif %}">
               <a class="nav-link text-uppercase text-expanded" href="{% url 'services' %}">Servicios</a>
@@ -57,9 +60,6 @@
             </li>
             <li class="nav-item px-lg-4 {% if request.path|slice:':6' == '/blog/' %} active {% endif %}">
               <a class="nav-link text-uppercase text-expanded" href="{% url 'blog' %}">Blog</a>
-            </li>
-            <li class="nav-item px-lg-4 {% if request.path == '/delegaciones/' %} active {% endif %}">
-              <a class="nav-link text-uppercase text-expanded" href="#">Delegaciones</a>
             </li>
           </ul>
         </div>

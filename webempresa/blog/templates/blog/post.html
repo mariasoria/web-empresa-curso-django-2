@@ -1,10 +1,11 @@
 {% extends 'core/base.html' %}
 
-{% block title %} Blog {% endblock %}
+{% block title %} Entrada en el blog {% endblock %}
 
 {% load static %}
 {% block content %}
-    {% for post in posts %}
+<!-- Uso la relacion inversa entre category y post -->
+
         <section class="page-section cta">
         <div class="container">
             <div class="row">
@@ -12,7 +13,7 @@
                 <div class="cta-innerv text-center rounded">
                 <h2 class="section-heading mb-5">
                     <span class="section-heading-upper">  {{post.published|date:"SHORT_DATE_FORMAT" }}</span>
-                    <span class="section-heading-lower"><a href="{% url 'post' post.id %}" class="link">{{post.title}}</a></span>
+                    <span class="section-heading-lower">{{post.title}}</span>
                 </h2>
                 <p class="mb-0">
                     <img class="mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" src="{{post.image.url}}" alt="">
@@ -22,10 +23,12 @@
                 </p>
                 <p class="mb-0 mbt">
                     <span class="section-heading-under">Publicado por <em><b>{{post.author}}</b></em> en 
-                    <!-- <em><a href="#" class="link">General</a>, <a href="#" class="link">Ofertas</a></em></span> -->
-                    {% for category in post.categories.all %}
-                        {{category.name}}{% if not forloop.last%}, {%endif %}
-                    {% endfor %}
+                        <!-- <em>
+                        {% for category in post.categories.all %}
+                            <a href="{% url 'category' category.id %}" class="link">{{category.name}} </a> {% if not forloop.last%}, {%endif %}
+                        {% endfor %}
+                        </em>-->
+                    </span>
                 </p>
                 </div>
 
@@ -33,5 +36,4 @@
             </div>
         </div>
         </section>
-    {% endfor %}
 {% endblock %}

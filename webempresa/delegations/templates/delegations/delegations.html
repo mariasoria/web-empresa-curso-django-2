@@ -1,0 +1,33 @@
+{% extends 'core/base.html' %}
+
+{% block title %} Delegaciones {% endblock %}
+
+{% load static %}
+{% block content %}
+  {% for delegation in delegations %}
+    <section class="page-section">
+        <div class="container">
+          <div class="product-item">
+            <div class="product-item-title d-flex">
+              <div class="bg-faded p-5 d-flex mr-auto rounded">
+<!--              <div class="bg-faded p-5 d-flex mr-auto rounded">-->
+                <h2 class="section-heading mb-0">
+                    <span class="section-heading-upper">{{delegation.name}}</span>
+                    <span class="section-heading-lower">{{delegation.place}}</span>
+                </h2>
+              </div>
+            </div>
+            <img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" src="" alt="">
+            <div class="product-item-description d-flex ml-auto">
+                <div class="bg-faded p-5 rounded">
+                  {% if delegation.phone %}
+                    <p class="mb-0">Teléfono de contacto: {{delegation.phone}}</p>
+                  {% endif %}
+                    <p class="mb-0">Email de contacto: <a href="mailto:{{delegation.email}}"> {{delegation.email}}</a></p>
+                </div>
+            </div>
+          </div>
+        </div>
+      </section>
+  {% endfor %}
+{% endblock %}
