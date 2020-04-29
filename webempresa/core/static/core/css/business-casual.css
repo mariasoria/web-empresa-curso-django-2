@@ -1,10 +1,11 @@
 body {
   font-family: 'Lora';
-  background: linear-gradient(rgba(47, 23, 15, 0.65), rgba(47, 23, 15, 0.65)), url("../img/bg.png");
+  background: linear-gradient(to bottom, rgba(255, 217, 0, 0.39), white);
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
 }
+
 
 h1,
 h2,
@@ -29,6 +30,7 @@ p {
   text-transform: uppercase;
   line-height: 1;
   font-family: 'Museo slab';
+  color: rgb(160, 56, 8);
 }
 
 .site-heading .site-heading-upper {
@@ -80,7 +82,7 @@ p {
 }
 
 #mainNav {
-  background-color: rgba(47, 23, 15, 0.9);
+  background-color: rgb(226, 6, 17);
   font-family: 'Museo slab 700';
 }
 
@@ -239,7 +241,7 @@ p {
 }
 
 .footer {
-  background-color: rgba(47, 23, 15, 0.9);
+  background-color: rgba(226, 6, 17);
 }
 
 .text-primary {

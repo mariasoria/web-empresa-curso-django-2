@@ -11,4 +11,5 @@ urlpatterns = [
     # lo captura en "def category", el parametro que dice "category_id"
     # pero es un string y yo lo quiero en entero, asi que lo convierto antes de mandarlo a la vista
     path('category/<int:category_id>/', views.category, name='category'),
+    path('<int:post_id>/', views.post, name='post')
 ]
